@@ -1,0 +1,2 @@
+import joblib
+joblib.dump(model, "student_performance_model.pkl")
