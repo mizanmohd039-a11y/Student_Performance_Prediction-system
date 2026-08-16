@@ -6,3 +6,4 @@ plotly
 matplotlib
 seaborn
 scikit-learn
+html5lib
