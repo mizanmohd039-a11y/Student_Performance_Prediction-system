@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Performance Prediction System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .form-box {
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            text-align: center;
+            font-size: 45px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3a8a;
+            font-size: 28px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2563eb;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin: 12px 0 25px;
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            margin-bottom: 6px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        input:focus,
+        select:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 5px rgba(37, 99, 235, 0.2);
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #2563eb;
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #777;
+            font-size: 12px;
+        }
+
+        .required {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="form-box">
+
+            <div class="logo">🎓</div>
+
+            <h1>Student Performance</h1>
+            <h2>Prediction System</h2>
+
+            <p class="subtitle">
+                Please enter your details to continue
+            </p>
+
+            <form onsubmit="continueToPrediction(event)">
+
+                <label>
+                    Student Name <span class="required">*</span>
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+
+                <label>
+                    Gmail <span class="required">*</span>
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="example@gmail.com"
+                    required
+                >
+
+
+                <label>
+                    Phone Number <span class="required">*</span>
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter 10-digit phone number"
+                    pattern="[0-9]{10}"
+                    required
+                >
+
+
+                <label>
+                    Branch <span class="required">*</span>
+                </label>
+
+                <select id="branch" required>
+
+                    <option value="">
+                        Select your branch
+                    </option>
+
+                    <option value="CSE">
+                        Computer Science & Engineering
+                    </option>
+
+                    <option value="IT">
+                        Information Technology
+                    </option>
+
+                    <option value="ECE">
+                        Electronics & Communication Engineering
+                    </option>
+
+                    <option value="EEE">
+                        Electrical & Electronics Engineering
+                    </option>
+
+                    <option value="ME">
+                        Mechanical Engineering
+                    </option>
+
+                    <option value="CE">
+                        Civil Engineering
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Course <span class="required">*</span>
+                </label>
+
+                <select id="course" required>
+
+                    <option value="">
+                        Select your course
+                    </option>
+
+                    <option value="B.Tech">
+                        B.Tech
+                    </option>
+
+                    <option value="BCA">
+                        BCA
+                    </option>
+
+                    <option value="B.Sc">
+                        B.Sc
+                    </option>
+
+                    <option value="MCA">
+                        MCA
+                    </option>
+
+                    <option value="M.Tech">
+                        M.Tech
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Year <span class="required">*</span>
+                </label>
+
+                <select id="year" required>
+
+                    <option value="">
+                        Select your year
+                    </option>
+
+                    <option value="1st Year">
+                        1st Year
+                    </option>
+
+                    <option value="2nd Year">
+                        2nd Year
+                    </option>
+
+                    <option value="3rd Year">
+                        3rd Year
+                    </option>
+
+                    <option value="4th Year">
+                        4th Year
+                    </option>
+
+                </select>
+
+
+                <label>
+                    Semester
+                </label>
+
+                <select id="semester">
+
+                    <option value="">
+                        Select semester
+                    </option>
+
+                    <option>1st Semester</option>
+                    <option>2nd Semester</option>
+                    <option>3rd Semester</option>
+                    <option>4th Semester</option>
+                    <option>5th Semester</option>
+                    <option>6th Semester</option>
+                    <option>7th Semester</option>
+                    <option>8th Semester</option>
+
+                </select>
+
+
+                <button type="submit">
+                    Continue to Prediction →
+                </button>
+
+            </form>
+
+            <div class="footer">
+                © 2026 Student Performance Prediction System
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function continueToPrediction(event) {
+
+            event.preventDefault();
+
+            // Get student details
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let phone = document.getElementById("phone").value;
+            let branch = document.getElementById("branch").value;
+            let course = document.getElementById("course").value;
+            let year = document.getElementById("year").value;
+            let semester = document.getElementById("semester").value;
+
+            // Save details in browser
+            localStorage.setItem("studentName", name);
+            localStorage.setItem("studentEmail", email);
+            localStorage.setItem("studentPhone", phone);
+            localStorage.setItem("studentBranch", branch);
+            localStorage.setItem("studentCourse", course);
+            localStorage.setItem("studentYear", year);
+            localStorage.setItem("studentSemester", semester);
+
+            // OPEN YOUR STREAMLIT PREDICTION SYSTEM
+            window.location.href =
+                "https://studentperformanceprediction-system-mohfrg8np6nsn4rivaiyek.streamlit.app/";
+        }
+
+    </script>
+
+</body>
+
+</html>
